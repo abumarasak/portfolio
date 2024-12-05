@@ -1,0 +1,129 @@
+/* Light Mode */
+.work-steps {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+  background-color: var(--background-color-secondary-light);
+}
+
+.work-steps .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .work-steps .container {
+    flex-direction: column;
+  }
+}
+
+.work-steps .image {
+  max-width: 100%;
+  margin-right: 100px;
+}
+
+@media (max-width: 991px) {
+  .work-steps .image {
+    margin: 0 0 50px;
+  }
+}
+
+.work-steps .info .box {
+  background-color: #f6f5f5;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  border: 2px solid white;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .work-steps .info .box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.work-steps .info .box::before {
+  content: "";
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  background-color: #ededed;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+
+.work-steps .info .box:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.work-steps .info .box img {
+  width: 64px;
+  margin-right: 30px;
+}
+
+@media (max-width: 767px) {
+  .work-steps .info .box img {
+    margin: 0 0 30px;
+  }
+}
+
+.work-steps .info .box h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.work-steps .info .box p {
+  color: #777;
+  line-height: 1.7;
+  margin: 10px 0 0;
+  font-size: 18px;
+}
+.work-steps .info .box .icon {
+  width: 100px;
+  margin-right: 30px;
+  height: 64px;
+}
+
+/* Dark Mode */
+body.dark .work-steps {
+  background-color: #1e1e1e; /* Dark background */
+  color: #f0f0f0; /* Light text */
+}
+
+body.dark .work-steps .info .box {
+  background-color: #2a2a2a; /* Darker box background */
+  border-color: #3a3a3a; /* Subtle border color */
+}
+
+body.dark .work-steps .info .box::before {
+  background-color: #333333; /* Darker hover background effect */
+}
+
+body.dark .work-steps .info .box:hover::before {
+  background-color: #444444; /* Slightly lighter hover effect */
+}
+
+body.dark .work-steps .info .box h3 {
+  color: #ffffff; /* White text for headings */
+}
+
+body.dark .work-steps .info .box p {
+  color: #cccccc; /* Light gray text for descriptions */
+}
+
+body.dark .work-steps .icon {
+  opacity: 0.9; /* Slight dimming effect for images in dark mode */
+  width: 100px;
+  margin-right: 30px;
+  height: 64px;
+}

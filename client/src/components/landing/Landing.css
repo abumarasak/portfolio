@@ -1,0 +1,235 @@
+:root {
+  --background-color-secondary-light: #ececec;
+  --background-color-secondary-dark: #1e1e1e;
+  --background-color: #ffffff;
+  --background-color-dark: #121212;
+  --text-color: #000000;
+  --text-color-dark: #f1f1f1;
+  --text-color-secondary: #666666;
+  --text-color-secondary-dark: #bbbbbb;
+  --main-color: #3498db;
+  --main-color-alt: #2980b9;
+  --main-transition: all 0.3s ease;
+}
+
+/* General landing styles */
+.landing {
+  position: relative;
+  height: calc(100vh - 72px);
+}
+@media (max-width: 767px) {
+  .landing {
+    height: calc(100dvh - 90px);
+  }
+}
+body.dark .landing {
+  background-color: var(--background-color-secondary-dark);
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -68px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color-secondary-light);
+  z-index: -1;
+  transform: skewY(-6deg);
+  transform-origin: top left;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+
+body.dark .landing::before {
+  background-color: var(--background-color-secondary-dark);
+  box-shadow: 0 0 20px rgb(218, 216, 216);
+}
+
+.landing .container {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  padding-bottom: 120px;
+}
+
+.landing .text {
+  flex: 1;
+}
+
+@media (max-width: 991px) {
+  .landing .text {
+    text-align: center;
+  }
+}
+
+.landing .text h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: -2px;
+  color: var(--text-color);
+}
+
+body.dark .landing .text h1 {
+  color: var(--text-color-dark);
+}
+
+@media (max-width: 767px) {
+  .landing .text h1 {
+    font-size: 28px;
+  }
+}
+
+.landing .text p {
+  font-size: 23px;
+  line-height: 1.7;
+  margin: 5px 0 0;
+  color: var(--text-color-secondary);
+  max-width: 500px;
+}
+
+body.dark .landing .text p {
+  color: var(--text-color-secondary-dark);
+}
+
+@media (max-width: 991px) {
+  .landing .text p {
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing .text p {
+    font-size: 18px;
+  }
+}
+
+.landing .image img {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  animation: up-and-down 5s linear infinite;
+  border-radius: 50%;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+body.dark .landing .image img {
+  box-shadow: 0 0 40px rgba(218, 214, 214, 0.5);
+}
+
+@media (max-width: 991px) {
+  .landing .image {
+    display: none;
+  }
+}
+
+.landing .go-down {
+  color: var(--main-color);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--main-transition);
+}
+
+body.dark .landing .go-down {
+  color: var(--main-color-alt);
+}
+
+.landing .go-down:hover {
+  color: var(--main-color-alt);
+}
+
+body.dark .landing .go-down:hover {
+  color: var(--main-color);
+}
+
+.landing .go-down .icon {
+  animation: bouncing 1.5s infinite;
+  width: 30px;
+  height: 30px;
+}
+
+/* Animations */
+@keyframes up-and-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bouncing {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-btn {
+  background-color: #3498db;
+  color: #ffffff;
+  border: 2px solid #3498db;
+}
+
+.contact-btn:hover {
+  background-color: #ffffff;
+  color: #3498db;
+}
+
+.download-btn {
+  background-color: #2ecc71;
+  color: #ffffff;
+  border: 2px solid #2ecc71;
+}
+
+.download-btn:hover {
+  background-color: #ffffff;
+  color: #2ecc71;
+}
+
+/* Dark mode styles */
+body.dark .contact-btn {
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: 2px solid #1a73e8;
+}
+
+body.dark .contact-btn:hover {
+  background-color: #ffffff;
+  color: #1a73e8;
+}
+
+body.dark .download-btn {
+  background-color: #27ae60;
+  color: #ffffff;
+  border: 2px solid #27ae60;
+}
+
+body.dark .download-btn:hover {
+  background-color: #ffffff;
+  color: #27ae60;
+}
+
+.sweet-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  color: red;
+}

@@ -1,0 +1,43 @@
+/* Terminal container */
+.terminal-container {
+  background-color: black;
+  color: lime;
+  font-family: monospace;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* Terminal output area */
+.terminal-output {
+  flex-grow: 1;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  line-height: 1.4; /* Improve readability of ASCII art */
+}
+
+/* Input container */
+.terminal-input-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Input field */
+.terminal-input {
+  background-color: black;
+  color: lime;
+  border: none;
+  outline: none;
+  font-family: monospace;
+  flex-grow: 1;
+  padding: 5px;
+}
